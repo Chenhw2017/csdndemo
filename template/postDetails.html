@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/css/clearDefault.css">
+    <link rel="stylesheet" href="/public/css/postDetails.css">
+    <!-- <link rel="stylesheet" href="/public/css/header.css"> -->
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/postDetails.js"></script>
+    <title>帖子详情页面</title>
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <%-include("../template/header.html",{userInfo:userInfo})%>
+        <div class="postDetails">
+            <div class="top-nav">
+                <a href="#">CSDN论坛</a><span>></span><a href="">移动开发</a><span>></span><a href="#">Android</a>
+            </div>
+            <div class="cooperattion">
+                <div class="manage">
+                    <span>管理菜单</span><span class="triangle"><i></i></span>
+                    <ul class="list">
+                        <li>
+                            <img src="/public/img/icons/top.png" alt="">
+                            <p>置顶</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/tuijian.png" alt="">
+                            <p>推荐</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/yidong.png" alt="">
+                            <p>移动</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/biaoji.png" alt="">
+                            <p>编辑</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/shanchu.png" alt="">
+                            <p>删除</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/jiafen.png" alt="">
+                            <p>加分</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/gaoliang.png" alt="">
+                            <p>帖子高亮</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="endPost item">结贴</div>
+                <div class="reply item">
+                    回复
+                </div>
+            </div>
+            <!-- 帖子标题 -->
+            <div class="title">
+                安卓程序实现操作微信给好友发送信息 [问题点数：<span>50</span>分]
+                <a href="javascript:;"><img src="/public/img/star.png" alt=""><span>收藏帖子</span></a>
+            </div>
+            <!-- 帖子标题end -->
+
+            <!-- 帖子主体 -->
+            <div class="content" id="content">
+                <div class="item clearfix">
+                    <div class="userInfo fl">
+                        <div class="top">
+                            <img src="<%='/server/upload/'+postInfo.avater%>" alt="">
+                        </div>
+                        <div class="name">
+                            <%=postInfo.username%>
+                        </div>
+                        <div class="level"><span>论坛</span><span><%=postInfo.levels%></span></div>
+                    </div>
+                    <div class="context fl">
+                        <div class="top clearfix">
+                            <div class="count fl">
+                                回复次数：<span>6</span>
+                            </div>
+                            <div class="fr">
+                                发表于<span class="time"><%=postInfo.time%></span><span class="floor">楼主</span>
+                            </div>
+                        </div>
+                        <div class="question">
+                            <%=postInfo.content%>
+                        </div>
+                        <div class="pic">
+                            <img src="<%='/public/upload/'+postInfo.picture%>" alt="">
+                        </div>
+                        <div class="bottom">
+                            <img src="/public/img/icons/sup_sel.png" alt=""><span class="supCount"><%=postInfo.supCount%></span>
+                            <img src="/public/img/icons/sup.png" alt=""><span class="oppCount"><%=postInfo.oppCount%></span>
+                            <div class="fr">
+                                <a href="#">引用</a><span></span>
+                                <a href="#">举报</a><span></span>
+                                <a href="#">管理</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item clearfix">
+                    <div class="userInfo fl">
+                        <div class="top">
+                            <img src="/public/img/avater02.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            charleslang7777
+                        </div>
+                        <div class="level"><span>论坛</span><span>2</span></div>
+                    </div>
+                    <div class="context fl">
+                        <div class="top clearfix">
+                            <div class="count fl">
+                                回复次数：<span>6</span>
+                            </div>
+                            <div class="fr">
+                                发表于<span class="time">2018-06-02 16:18:32</span><span class="floor">楼主</span>
+                            </div>
+                        </div>
+                        <div class="question">
+                            接到一个需求：有80多张图片，大小在100k-300k，要求在App上以动画的形式播放他们，时间间隔50ms。 直接以帧动画的形式播放肯定会内存溢出。 所以我尝试了一边播放一边从sd卡（其他储存位置也行）加载他们。然后测得bitmap的decode时间在60ms-180ms之间，平均100ms。然后只能预加载一部分。但是预加载15张以上就oom了，而且预加载15张的时间还不能让后续所有图片在要播放前加载完。陷入了一个无解的情况。 想请教一下各位，有没有什么其他的方式在短时间内来播放多张较大的图片
+                        </div>
+                        <div class="pic">
+                            <img src="/public/img/cutPic.png" alt="">
+                        </div>
+                        <div class="bottom">
+                            <img src="/public/img/icons/sup_sel.png" alt=""><span class="supCount">3</span>
+                            <img src="/public/img/icons/sup.png" alt=""><span class="oppCount">2</span>
+                            <div class="fr">
+                                <a href="#">引用</a><span></span>
+                                <a href="#">举报</a><span></span>
+                                <a href="#">管理</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item clearfix">
+                    <div class="userInfo fl">
+                        <div class="top">
+                            <img src="/public/img/avater02.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            charleslang7777
+                        </div>
+                        <div class="level"><span>论坛</span><span>2</span></div>
+                    </div>
+                    <div class="context fl">
+                        <div class="top clearfix">
+                            <div class="count fl">
+                                回复次数：<span>6</span>
+                            </div>
+                            <div class="fr">
+                                发表于<span class="time">2018-06-02 16:18:32</span><span class="floor">#1</span>得分:<span class="marks">10</span>
+                            </div>
+                        </div>
+                        <div class="question">
+                            接到一个需求：有80多张图片，大小在100k-300k，要求在App上以动画的形式播放他们，时间间隔50ms。 直接以帧动画的形式播放肯定会内存溢出。 所以我尝试了一边播放一边从sd卡（其他储存位置也行）加载他们。然后测得bitmap的decode时间在60ms-180ms之间，平均100ms。然后只能预加载一部分。但是预加载15张以上就oom了，而且预加载15张的时间还不能让后续所有图片在要播放前加载完。陷入了一个无解的情况。 想请教一下各位，有没有什么其他的方式在短时间内来播放多张较大的图片
+                        </div>
+                        <div class="pic">
+                            <img src="/public/img/cutPic.png" alt="">
+                        </div>
+                        <div class="bottom">
+                            <img src="/public/img/icons/sup_sel.png" alt=""><span class="supCount">3</span>
+                            <img src="/public/img/icons/sup.png" alt=""><span class="oppCount">2</span>
+                            <div class="fr">
+                                <a href="#">引用</a><span></span>
+                                <a href="#">举报</a><span></span>
+                                <a href="#">管理</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 帖子主体end -->
+
+            <!-- 帖子操作 -->
+            <div class="cooperattion">
+                <div class="manage">
+                    <span>管理菜单</span><span class="triangle"><i></i></span>
+                    <ul class="list">
+                        <li>
+                            <img src="/public/img/icons/top.png" alt="">
+                            <p>置顶</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/tuijian.png" alt="">
+                            <p>推荐</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/yidong.png" alt="">
+                            <p>移动</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/biaoji.png" alt="">
+                            <p>编辑</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/shanchu.png" alt="">
+                            <p>删除</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/jiafen.png" alt="">
+                            <p>加分</p>
+                        </li>
+                        <li>
+                            <img src="/public/img/icons/gaoliang.png" alt="">
+                            <p>帖子高亮</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="endPost item">结贴</div>
+                <div class="endPost item">回复</div>
+
+            </div>
+            <!-- 帖子操作end -->
+            <!-- 编写 -->
+            <div class="write">
+                <div class="reply item">
+
+                    <!-- <div class="title"><label>标题</label><input type="text" name="title" placeholder="请在此输入标题"></div> -->
+                    <div class="content">
+                        <textarea name="content" id="replyContent" placeholder="回复内容"></textarea>
+                    </div>
+                    <div class="pic clearfix">
+                        <ul class="clearfix picUl">
+                            <li>
+                                <label for="picture1">
+                                        <img src="/public/img/picAdd.png" alt="">
+                                        <input type="file" id="picture1" hidden="hidden" name="picture1">
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="submit" value="提交回复" id="writeSubmit">
+
+                </div>
+
+            </div>
+            <!-- 编写end -->
+        </div>
+</body>
+
+</html>

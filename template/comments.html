@@ -1,0 +1,36 @@
+<div class="item clearfix">
+    <div class="userInfo fl">
+        <div class="top">
+            <img src="<%='/server/upload/'+comments.avater%>" alt="">
+        </div>
+        <div class="name">
+            <%=comments.username%>
+        </div>
+        <div class="level"><span>论坛</span><span><%=comments.levels%></span></div>
+    </div>
+    <div class="context fl">
+        <div class="top clearfix">
+            <div class="count fl">
+                回复次数：<span>6</span>
+            </div>
+            <div class="fr">
+                发表于<span class="time"><%=comments.time%></span><span class="floor">楼主</span>
+            </div>
+        </div>
+        <div class="question">
+            <%=comments.content%>
+        </div>
+        <div class="pic">
+            <img src="<%='/server/upload/'+comments.picture%>" alt="">
+        </div>
+        <div class="bottom">
+            <img src="/public/img/icons/sup_sel.png" alt=""><span class="supCount"><%=comments.supCount%></span>
+            <img src="/public/img/icons/sup.png" alt=""><span class="oppCount"><%=comments.oppCount%></span>
+            <div class="fr">
+                <a href="#">引用</a><span></span>
+                <a href="#">举报</a><span></span>
+                <a href="#">管理</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/css/clearDefault.css">
+    <link rel="stylesheet" href="/public/css/index.css">
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="./public/js/nav.js"></script>
+    <script src="./public/js/index.js"></script>
+    <title>首页</title>
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <div class="head" data-id="333">
+        <div class="w">
+            <a class="logo" href="http://127.0.0.1:9999"><img src="/public/img/logo.png" alt=""></a>
+            <%if(userInfo){%>
+                <div class="fr userInfo"><img class="avater" src="<%=('./server/upload/'+userInfo.avater)%>"><a href="/public/pages/login.html" class="center">个人中心</a><a class="msg" href="/public/pages/register.html">消息<span>4</span></a><a href="http://127.0.0.1:9999/api/logOut">退出登录</a></div>
+                <%}else{%>
+                    <div class="fr"><a href="/public/pages/login.html" class="login">登录</a><a class="register" href="/public/pages/register.html">注册</a></div>
+                    <%}%>
+        </div>
+    </div>
+    <!-- 论坛公告 -->
+    <div class="notice">
+        <div class="w">
+            <img src="./public/img/cast.jpg" alt=""><a href="">预计今晚论坛将进行系统维护，届时出现有可能出现用户短时间连接中断！</a>
+        </div>
+    </div>
+
+    <div class="w">
+        <!-- 论坛主主体部分 -->
+        <div class="main fr">
+            <!-- 右侧部分 -->
+            <div class="main-right fr">
+                <!-- 用户信息 -->
+                <div class="userInfo">
+                    <div class="userInfo-head">
+                        <%if(userInfo){%>
+                            <img src="<%=('/server/upload/'+userInfo.avater)%>" alt="">
+                            <div class="info">
+                                <a href="#">
+                                    <%=userInfo.username%>
+                                </a>
+                                <div class="level"><span>论坛</span><span><%=userInfo.levels%></span></div>
+                            </div>
+                            <%}else{%>
+                                <img src="/public/img/user.png" alt="">
+                                <div class="info">
+                                    <a href="/public/pages/login.html">未登录</a>
+                                    <div class="infoPannel">用户未登录</div>
+                                </div>
+                                <%}%>
+
+                    </div>
+                    <%if(userInfo!=null){%>
+                        <div class="content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>剩余可用积分</td>
+                                        <td>总计术积分</td>
+                                        <td>现在排名</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <%=userInfo.leftMarks%>
+                                        </td>
+                                        <td>
+                                            <%=userInfo.totalMarks%>
+                                        </td>
+                                        <td>
+                                            <%=userInfo.rank%>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <%}%>
+                </div>
+                <!-- 用户信息 -->
+
+                <!-- 声望排行 -->
+                <div class="honorRank">
+                    <div class="honorRank-head">
+                        <h3>
+                            荣誉
+                        </h3>
+                        <ul>
+                            <li>周榜</li>
+                            <li>月榜</li>
+                            <li>总榜</li>
+                        </ul>
+                    </div>
+                    <div class="honorRank-content">
+                        <ul>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 声望排行 -->
+
+                <!-- 活跃排行 -->
+                <div class="activityRank honorRank">
+                    <div class="honorRank-head">
+                        <h3>
+                            活跃
+                        </h3>
+                        <ul>
+                            <li>周榜</li>
+                            <li>月榜</li>
+                            <li>总榜</li>
+                        </ul>
+                    </div>
+                    <div class="honorRank-content">
+                        <ul>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                            <li>
+                                <span class="num">1</span><a href="#">wuxiaozhang</a><span class="marks">876</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 活跃排行 -->
+            </div>
+            <!-- 右侧部分 -->
+
+            <!-- 左侧论坛内容 -->
+            <div class="main-middle fr">
+                <!-- 本周牛人 -->
+                <div class="week-smart">
+                    <div class="title">
+                        本周牛人<a href="#">更多</a>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="./public/img/avater01.jpg" alt=""></a>
+                                <div class="info">
+                                    <a href="#" class="name">amany</a>
+                                    <div class="level"><span>论坛</span><span>10</span></div>
+                                    <button>关注</button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./public/img/avater01.jpg" alt=""></a>
+                                <div class="info">
+                                    <a href="#" class="name">amany</a>
+                                    <div class="level"><span>论坛</span><span>10</span></div>
+                                    <button>关注</button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./public/img/avater01.jpg" alt=""></a>
+                                <div class="info">
+                                    <a href="#" class="name">amany</a>
+                                    <div class="level"><span>论坛</span><span>10</span></div>
+                                    <button>关注</button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./public/img/avater01.jpg" alt=""></a>
+                                <div class="info">
+                                    <a href="#" class="name">amany</a>
+                                    <div class="level"><span>论坛</span><span>10</span></div>
+                                    <button>关注</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 本周牛人end -->
+                <!-- 兴趣推荐 -->
+                <div class="week-smart">
+                    <div class="title">
+                        兴趣推荐<a href="#">更多</a>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="./public/img/avater01.jpg" alt=""></a>
+                                <div class="info">
+                                    <a href="#" class="name">amany</a>
+                                    <div class="level"><span>论坛</span><span>10</span></div>
+                                    <button>关注</button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./public/img/avater01.jpg" alt=""></a>
+                                <div class="info">
+                                    <a href="#" class="name">amany</a>
+                                    <div class="level"><span>论坛</span><span>10</span></div>
+                                    <button>关注</button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./public/img/avater01.jpg" alt=""></a>
+                                <div class="info">
+                                    <a href="#" class="name">amany</a>
+                                    <div class="level"><span>论坛</span><span>10</span></div>
+                                    <button>关注</button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./public/img/avater01.jpg" alt=""></a>
+                                <div class="info">
+                                    <a href="#" class="name">amany</a>
+                                    <div class="level"><span>论坛</span><span>10</span></div>
+                                    <button>关注</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 兴趣推荐end -->
+                <!-- 热帖 -->
+                <div class="hot week-smart">
+                    <div class="title">
+                        热帖<a href="#">更多</a>
+                    </div>
+                    <div class="content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>技术分类</td>
+                                    <td>标题</td>
+                                    <td>发帖人</td>
+                                    <td>回复数</td>
+                                    <td>人气</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 热帖end -->
+                <!--牛人 -->
+                <div class="hot week-smart">
+                    <div class="title">
+                        牛人推荐<a href="#">更多</a>
+                    </div>
+                    <div class="content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>技术分类</td>
+                                    <td>标题</td>
+                                    <td>发帖人</td>
+                                    <td>回复数</td>
+                                    <td>人气</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 牛人end -->
+                <!--版主推荐-->
+                <div class="hot week-smart">
+                    <div class="title">
+                        版主推荐<a href="#">更多</a>
+                    </div>
+                    <div class="content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>技术分类</td>
+                                    <td>标题</td>
+                                    <td>发帖人</td>
+                                    <td>回复数</td>
+                                    <td>人气</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                                <tr>
+                                    <td>CUDA</td>
+                                    <td><a href="#"> 笔记本的1050ti支持CUDA功能吗？</a></td>
+                                    <td> hncoolpy2018</td>
+                                    <td>6</td>
+                                    <td>402</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 版主end -->
+            </div>
+            <!-- 左侧论坛内容 -->
+        </div>
+        <!-- 论坛主主体部分end -->
+        <!-- 左侧导航 -->
+        <div class="category-nav">
+            <div class="search">
+                <div class="search-head">
+                    <input type="text" placeholder="寻找我感谢的论坛">
+                </div>
+                <div class="search-content">
+                    <div id="firstpane" class="menu_list">
+                        <a class="menu_head current" href="http://127.0.0.1:9999/nav/Mobile">移动开发</a>
+                        <div style="display:block" class="menu_body">
+                            <a href="http://127.0.0.1:9999/nav/Mobile/IOS">IOS</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/Android">Android</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/Swift">Swift</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/Windows">Windows客户端开发</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/Symbia">Symbia</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/BlackBerry">BlackBerry</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/Qt">Qt</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/WXZF">微信支付</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/YDGG">移动广告</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/WXKF">微信开发</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/Others">移动开发其它问题</a>
+                            <a href="http://127.0.0.1:9999/nav/Mobile/Xamarin">Xamarin技术</a>
+                        </div>
+                        <a class="menu_head" href="http://127.0.0.1:9999/nav/CloudCpt">云计算</a>
+                        <div style="display:none" class="menu_body">
+                            <a href="http://127.0.0.1:9999/nav/CloudCpt/AWS">AWS</a>
+                            <a href="http://127.0.0.1:9999/nav/CloudCpt/HWCloud">华为云计算</a>
+                            <a href="http://127.0.0.1:9999/nav/CloudCpt/KFYPT">开放平台</a>
+                            <a href="http://127.0.0.1:9999/nav/CloudCpt/CloundSafe">云安全</a>
+                            <a href="http://127.0.0.1:9999/nav/CloudCpt/distributeCpt">分布式计算/Hadoop</a>
+                            <a href="http://127.0.0.1:9999/nav/CloudCpt/CloudStorage">云存储</a>
+                            <a href="http://127.0.0.1:9999/nav/CloudCpt/Docker">Docker</a>
+                            <a href="http://127.0.0.1:9999/nav/CloudCpt/Spark">Spark</a>
+                            <a href="http://127.0.0.1:9999/nav/CloudCpt/SZHYPT">数字化企业云平台</a>
+                        </div>
+                        <a class="menu_head" href="http://127.0.0.1:9999/nav/BlockChain">区块链</a>
+                        <div style="display:none" class="menu_body">
+                            <a href="http://127.0.0.1:9999/nav/BlockChain/BlockChain">区块链技术</a>
+                            <a href="http://127.0.0.1:9999/nav/BlockChain/HXCJ">火星财经</a>
+
+                        </div>
+                        <a class="menu_head" href="http://127.0.0.1:9999/nav/DotNET">.NET技术</a>
+                        <div style="display:none" class="menu_body">
+                            <a href="http://127.0.0.1:9999/nav/DotNET/CSharp">C#</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/ASPDotNET">ASP.NET</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/DotNETFramework">.NET Framework</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/WebServices">Web Services</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/VBDotNET">VB.NET</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/VCDotNET">VC.NET</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/TBQ">图表区</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/DotNETQZ">.NET技术前瞻</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/DotNETFXYSJ">.NET分析与设计</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/ZJKJDevelop">组件/控件开发</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/SharePoint">SharePoint</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/CSharp">WPF/Silverlight</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/LINQ">LINQ</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/VSTS">VSTS</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/Others">其它</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/GXNWEBDevelop">高性能WEB开发</a>
+                            <a href="http://127.0.0.1:9999/nav/DotNET/Xamarin">Xamarin技术</a>
+                        </div>
+                        <a class="menu_head" href="http://127.0.0.1:9999/nav/Java">Java技术</a>
+                        <div style="display:none" class="menu_body">
+                            <a href="http://127.0.0.1:9999/nav/Java/JavaSE">Java SE</a>
+                            <a href="http://127.0.0.1:9999/nav/Java/J2ME">J2ME</a>
+                            <a href="http://127.0.0.1:9999/nav/Java/JavaWebDevelop">Java Web 开发</a>
+                            <a href="http://127.0.0.1:9999/nav/Java/JavaEE">Java EE</a>
+                            <a href="http://127.0.0.1:9999/nav/Java/Eclipse">Eclipse</a>
+                            <a href="http://127.0.0.1:9999/nav/Java/Others">Java其它相关</a>
+                            <a href="http://127.0.0.1:9999/nav/Java/JBoss">JBoss</a>
+                            <a href="http://127.0.0.1:9999/nav/Java/GXNWEBDevelop">高性能WEB开发</a>
+                        </div>
+                        <a class="menu_head" href="http://127.0.0.1:9999/nav/WepDevelop">Web开发</a>
+                        <div style="display:none" class="menu_body">
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/ASP">ASP</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/ASPDotNET">ASP.NET</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/JSP">JSP</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/JavaScript">JavaScript</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/SearchEngine">搜索引擎技术</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/Ajax">Ajax技术</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/">VBScript</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/VBScript">CGI</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/XMLAndXSL">XML/XSL</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/IIS">IIS</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/Apache">Apache</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/HTMLAndCSS">HTML(CSS)</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/ColdFusion">ColdFusion</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/RubyAndRails">Ruby/Rails</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/CrossClientDevelop">跨浏览器开发</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/Others">其它</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/GXNWEBDevelop">高性能WEB开发</a>
+                            <a href="http://127.0.0.1:9999/nav/WepDevelop/HTML5">HTML5</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav">
+
+            </div>
+        </div>
+        <!-- 左侧导航 -->
+    </div>
+
+
+</body>
+<script>
+    console.log($(".head").attr("data-id"));
+</script>
+
+</html>

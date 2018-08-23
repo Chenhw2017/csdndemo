@@ -1,0 +1,457 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix::after,
+.clearfix::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+ul {
+  list-style: none;
+}
+body {
+  background-color: #f7f8f9;
+  font-family: 'microsoft YaHei';
+}
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+a {
+  color: #000;
+}
+a:hover {
+  text-decoration: none;
+}
+.head {
+  height: 50px;
+  background-color: #f9f3e3;
+}
+.head .w {
+  position: relative;
+  height: 100%;
+}
+.head .w .userInfo .avater {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 10px 0;
+  vertical-align: middle;
+}
+.head .w .userInfo a {
+  vertical-align: middle;
+  display: inline-block;
+  height: 30px;
+  margin: 10px;
+  line-height: 30px;
+}
+.head .w .userInfo a:hover {
+  color: #b80606;
+}
+.head .w .userInfo a.msg span {
+  color: #fff;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 6px;
+  margin-left: 5px;
+  line-height: 18px;
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  background-color: #cc0606;
+}
+.head .w a {
+  height: 100%;
+  line-height: 50px;
+}
+.head .w a.login {
+  right: 60px;
+  position: absolute;
+}
+.head .w a.register {
+  right: 20px;
+  position: absolute;
+}
+.head .w a.logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 80px;
+}
+.head .w a.logo img {
+  width: 100%;
+  height: 100%;
+}
+.notice {
+  background-color: #f5d8ca;
+  height: 50px;
+}
+.notice img {
+  height: 30px;
+  width: 30px;
+  font-size: 0;
+  vertical-align: middle;
+  margin-left: 100px;
+}
+.notice a {
+  margin-left: 20px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+.category-nav .search .search-head {
+  width: 160px;
+}
+.category-nav .search .search-head input {
+  margin: 10px 0;
+  font-size: 10px;
+  height: 30px;
+  width: 100%;
+}
+.category-nav .search .search-content .menu_list {
+  width: 160px;
+}
+.category-nav .search .search-content .menu_head {
+  display: block;
+  width: 160px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #525252;
+  cursor: pointer;
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  border-top: 1px solid #F1F1F1;
+  position: relative;
+  margin: 0px;
+  font-weight: bold;
+  background: #f1f1f1 url(../img/pro_left.png) center right no-repeat;
+}
+.category-nav .search .search-content .menu_list .current {
+  background: #f1f1f1 url(../img/pro_down.png) center right no-repeat;
+}
+.category-nav .search .search-content .menu_body {
+  line-height: 38px;
+  border-left: 1px solid #e1e1e1;
+  background: #fff;
+  border-right: 1px solid #e1e1e1;
+}
+.category-nav .search .search-content .menu_body a {
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 10px;
+  color: #777777;
+  background: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #e1e1e1;
+}
+.category-nav .search .search-content .menu_body a:hover {
+  text-decoration: none;
+}
+.main .main-middle {
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 700px;
+}
+.main .main-middle .week-smart {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.main .main-middle .week-smart .title {
+  font-size: 14px;
+  width: 100%;
+  color: #4f4f4f;
+  font-weight: 700;
+  background-color: #e3e6e8;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 20px;
+  position: relative;
+}
+.main .main-middle .week-smart .title a {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  height: 100%;
+  font-size: 10px;
+  color: #4f4f4f;
+}
+.main .main-middle .week-smart .content {
+  padding: 15px 20px;
+}
+.main .main-middle .week-smart .content ul {
+  display: flex;
+  justify-content: space-between;
+}
+.main .main-middle .week-smart .content ul li {
+  flex: 1;
+}
+.main .main-middle .week-smart .content ul li > a {
+  float: left;
+  width: 70px;
+  height: 70px;
+}
+.main .main-middle .week-smart .content ul li > a img {
+  width: 100%;
+  height: 100%;
+}
+.main .main-middle .week-smart .content ul li .info {
+  margin-left: 80px;
+}
+.main .main-middle .week-smart .content ul li .info a {
+  color: #666;
+  font-size: 10px;
+}
+.main .main-middle .week-smart .content ul li .info a:hover {
+  cursor: pointer;
+}
+.main .main-middle .week-smart .content ul li .info .level {
+  font-size: 10px;
+  margin: 4px 0;
+}
+.main .main-middle .week-smart .content ul li .info .level span {
+  border: 1px solid #413f3f;
+  color: #fff;
+  padding: 1px 2px;
+}
+.main .main-middle .week-smart .content ul li .info .level span:first-child {
+  border-radius: 2px 0 0 2px;
+  background-color: gold;
+  border-right: none;
+}
+.main .main-middle .week-smart .content ul li .info .level span:last-child {
+  border-left: none;
+  border-radius: 0 2px 2px 0;
+  background-color: #644600;
+}
+.main .main-middle .week-smart .content ul li .info button {
+  background-color: #fff;
+  border: 1px solid #b90404;
+  color: #b90404;
+  font-size: 10px;
+  width: 50px;
+  border-radius: 4px;
+  line-height: 20px;
+}
+.main .main-middle .week-smart .content ul li .info button:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #b90404;
+}
+.main .main-middle .hot .content {
+  padding: 0;
+}
+.main .main-middle .hot .content table {
+  width: 100%;
+}
+.main .main-middle .hot .content table thead {
+  background-color: #fafafa;
+  height: 30px;
+  line-height: 30px;
+  padding: 30px;
+  color: #666;
+}
+.main .main-middle .hot .content table thead tr td {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.main .main-middle .hot .content table thead tr td:nth-of-type(1) {
+  width: 20%;
+  text-align: left;
+  padding-left: 20px;
+}
+.main .main-middle .hot .content table thead tr td:nth-of-type(2) {
+  width: 40%;
+}
+.main .main-middle .hot .content table thead tr td:nth-of-type(3) {
+  width: 20%;
+}
+.main .main-middle .hot .content table thead tr td:nth-of-type(4) {
+  width: 10%;
+}
+.main .main-middle .hot .content table thead tr td:nth-of-type(5) {
+  width: 10%;
+}
+.main .main-middle .hot .content table tbody tr td {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.main .main-middle .hot .content table tbody tr td:nth-of-type(1) {
+  padding-left: 30px;
+  text-align: left;
+  width: 20%;
+  color: #1b75db;
+}
+.main .main-middle .hot .content table tbody tr td:nth-of-type(2) {
+  width: 40%;
+}
+.main .main-middle .hot .content table tbody tr td:nth-of-type(2) a:hover {
+  color: #990808;
+  cursor: pointer;
+}
+.main .main-middle .hot .content table tbody tr td:nth-of-type(3) {
+  width: 20%;
+  color: #666;
+  font-size: 12px;
+}
+.main .main-middle .hot .content table tbody tr td:nth-of-type(4) {
+  width: 10%;
+  color: #d8800e;
+  font-size: 12px;
+}
+.main .main-middle .hot .content table tbody tr td:nth-of-type(5) {
+  width: 10%;
+  color: #d40924;
+  font-size: 12px;
+}
+.main .main-right {
+  padding-top: 10px;
+  width: 300px;
+}
+.main .main-right .userInfo {
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 1px 1px #fafafa;
+}
+.main .main-right .userInfo .userInfo-head {
+  height: 70px;
+}
+.main .main-right .userInfo .userInfo-head img {
+  float: left;
+  height: 50px;
+  width: 50px;
+}
+.main .main-right .userInfo .userInfo-head .info {
+  margin-left: 75px;
+}
+.main .main-right .userInfo .userInfo-head .info > a {
+  font-size: 14px;
+  font-weight: 600;
+}
+.main .main-right .userInfo .userInfo-head .info > a:hover {
+  color: red;
+}
+.main .main-right .userInfo .userInfo-head .info .level {
+  margin-top: 10px;
+  height: 20px;
+  font-size: 10px;
+}
+.main .main-right .userInfo .userInfo-head .info .level span {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  height: 20px;
+  color: #fff;
+}
+.main .main-right .userInfo .userInfo-head .info .level span:first-child {
+  width: 40px;
+  background-color: #9dc75f;
+  border-radius: 2px 0 0 2px;
+}
+.main .main-right .userInfo .userInfo-head .info .level span:last-child {
+  width: 20px;
+  border-radius: 0 2px 2px 0;
+  background-color: #2d5315;
+}
+.main .main-right .userInfo .content {
+  border-top: 1px solid #e7e4e4;
+}
+.main .main-right .userInfo .content table {
+  width: 100%;
+  font-size: 10px;
+  color: #666;
+}
+.main .main-right .userInfo .content table td {
+  text-align: center;
+}
+.main .main-right .userInfo .content table thead {
+  height: 30px;
+  line-height: 30px;
+}
+.main .main-right .userInfo .content table tbody td {
+  color: orange;
+}
+.main .main-right .honorRank {
+  padding: 15px 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.main .main-right .honorRank .honorRank-head {
+  height: 40px;
+  position: relative;
+  line-height: 40px;
+}
+.main .main-right .honorRank .honorRank-head h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+.main .main-right .honorRank .honorRank-head ul {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+.main .main-right .honorRank .honorRank-head ul li {
+  font-size: 12px;
+  vertical-align: top;
+  color: #666;
+  width: 30%;
+  height: 100%;
+  display: inline-block;
+  line-height: 40px;
+}
+.main .main-right .honorRank .honorRank-head ul li:hover {
+  cursor: pointer;
+  color: orange;
+}
+.main .main-right .honorRank .honorRank-content ul li {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  font-size: 10px;
+  border-bottom: 1px solid #f5f4f4;
+}
+.main .main-right .honorRank .honorRank-content ul li span.num {
+  display: inline-block;
+  background-color: orange;
+  vertical-align: middle;
+  color: #fff;
+  line-height: 18px;
+  text-align: center;
+  height: 18px;
+  width: 18px;
+}
+.main .main-right .honorRank .honorRank-content ul li span.marks {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 0;
+  color: #999;
+}
+.main .main-right .honorRank .honorRank-content ul li a {
+  margin-left: 10px;
+}

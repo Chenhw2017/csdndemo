@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix::after,
+.clearfix::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+ul {
+  list-style: none;
+}
+body {
+  background-color: #f7f8f9;
+  font-family: 'microsoft YaHei';
+}
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+a {
+  color: #000;
+}
+a:hover {
+  text-decoration: none;
+}
+.writePostMask {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.writePostMask .msg {
+  position: fixed;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 40px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.top-nav {
+  width: 1000px;
+  margin: 0 auto;
+  font-size: 10px;
+  color: #6b6b6b;
+  height: 40px;
+  line-height: 40px;
+}
+.top-nav a:hover {
+  text-decoration: underline;
+  color: #bb0808;
+}
+.top-nav span {
+  margin: 0 5px;
+}
+.write {
+  width: 1000px;
+  margin: 10px auto;
+  background-color: #fff;
+  border: 1px solid #4788c7;
+  padding: 10px;
+}
+.write .title {
+  margin: 20px 0;
+}
+.write .title label {
+  font-size: 14px;
+  font-weight: 700;
+}
+.write .title input {
+  outline: none;
+  width: 600px;
+  height: 30px;
+  font-size: 10px;
+  padding-left: 20px;
+  margin-left: 10px;
+  margin-right: 60px;
+}
+.write .title select {
+  height: 29px;
+  margin-right: 20px;
+}
+.write .title > span {
+  color: #999;
+  font-size: 12px;
+}
+.write .content textarea {
+  outline: none;
+  resize: none;
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+}
+.write .pic ul li {
+  margin: 20px 20px 20px 0;
+  float: left;
+  width: 100px;
+  height: 100px;
+  border: 1px dashed #dfdcdc;
+}
+.write .pic ul li label {
+  display: block;
+}
+.write .pic ul li img {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  cursor: pointer;
+}
+.write input[type="submit"] {
+  color: #fff;
+  background-color: #d41919;
+  border: none;
+  height: 40px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.write input[type="submit"]:hover {
+  background-color: #690505;
+}

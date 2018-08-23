@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public//css//clearDefault.css">
+    <link rel="stylesheet" href="/public/css/writePost.css">
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/writePost.js"></script>
+    <title>写帖子</title>
+</head>
+
+<body>
+    <!-- 积分不足提示蒙版 -->
+    <div class="writePostMask">
+        <div class="msg">
+            您的可用积分不足！请重新选择悬赏积分
+        </div>
+    </div>
+    <%-include("../template/header.html",{userInfo:userInfo})%>
+        <!-- 编写 -->
+        <div class="top-nav">
+            <a href="http://127.0.0.1:9999">CSDN论坛</a>
+            <%if(CategoryAndTechnoloy.category){%><span>></span>
+                <a href="<%='http://127.0.0.1:9999/nav/'+CategoryAndTechnoloy.path1%>">
+                    <%=CategoryAndTechnoloy.category%>
+                </a>
+                <%}%>
+                    <%if(CategoryAndTechnoloy.technology){%><span>></span>
+                        <a href="<%='http://127.0.0.1:9999/nav/'+CategoryAndTechnoloy.path2%>">
+                            <%=CategoryAndTechnoloy.technology%>
+                        </a>
+                        <span>></span>
+                        <a href="javascript:;">
+                            发帖      
+                        </a>
+                        <%}%>
+        </div>
+        <div class="write">
+            <div class="reply item">
+                <form action="<%='http://127.0.0.1:9999/nav/'+CategoryAndTechnoloy.path2+'/writePost/submit'%>" method="POST" enctype="multipart/form-data">
+                    <div class="title"><label>标题:</label>
+                        <input type="text" name="title" placeholder="请在此输入标题"> 悬赏积分:
+                        <select name="offerMarks" id="offerMarks">
+                            <option value="0">0</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="200">200</option>
+                            <option value="250">250</option>
+                            <option value="300">300</option>
+                            <option value="350">350</option>
+                            <option value="400">400</option>
+                        </select>
+                        <span>可用积分：</span><span id="leftMarks"><%=leftMarks%></span>
+                    </div>
+                    <div class="content">
+                        <textarea name="content" id="replyContent" placeholder="帖子内容"></textarea>
+                    </div>
+                    <div class="pic clearfix">
+                        <ul class="clearfix picUl">
+                            <li>
+                                <label for="picture1">
+                                        <img src="/public/img/picAdd.png" alt="" id="addPic">
+                                        <input type="file" id="picture1" hidden="hidden" name="picture1">
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="submit" value="发布">
+                </form>
+            </div>
+
+        </div>
+        <!-- 编写end -->
+</body>
+
+</html>
